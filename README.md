@@ -14,7 +14,8 @@ The parameters are obtained by the sensors in `SensorListener.java`
 
 Here's how I get the needed values:
 
-`   @Override
+```
+    @Override
     public void onSensorChanged(SensorEvent event) {
 
         if (event.sensor.getType()==Sensor.TYPE_ACCELEROMETER) {
@@ -43,11 +44,13 @@ Here's how I get the needed values:
         }
 
 }
-`
+```
+
 
 As you can see, the method `detect` is called, which is located in `MainActivity.java`. This is the core of the mechanism.
 It compares to current values (obtained by sensors) to such values that indicate that the phone is in a pocket. The border values given by me are pure approximation. So keep in mind, they have to be adjusted in order to achive accurate results.
-`
+
+```
 public void detect(float prox, float light, float g[], int inc){
         if((prox<1)&&(light<2)&&(g[1]<-0.5)&&( (inc>75)||(inc<100))){
             pocket=1;
@@ -61,7 +64,9 @@ public void detect(float prox, float light, float g[], int inc){
             //OUT OF POCKET
         }
 }
-`
+```
+
+
 In my example the border values are 1 for proximity sensor, 2 for light sensor and -0.5 for accelerometer (it also takes account of inclination).
 
 P.S: This mechanism isn't really precise.
