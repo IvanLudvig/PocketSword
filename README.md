@@ -3,6 +3,8 @@ An app that detects when the device is in a pocket. When the user takes out the 
 
 I got the idea for this app from Reddit. During development, I didn't find any implementation of detection if the device in a pocket. So, I made it myself.
 
+Download my app from google drive: https://drive.google.com/file/d/1fUDwH7exnwG5W3V92vNawcaTErK8Ks03/view?usp=sharing
+
 ## How to detect if the device is in a pocket
 
 The main signs that the phone is in a pocket are: little light, vertical upside-down position and lack of space.
