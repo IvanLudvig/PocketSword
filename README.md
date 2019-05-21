@@ -52,11 +52,11 @@ It compares to current values (obtained by sensors) to such values that indicate
 
 ```
 public void detect(float prox, float light, float g[], int inc){
-        if((prox<1)&&(light<2)&&(g[1]<-0.5)&&( (inc>75)||(inc<100))){
+        if((prox<1)&&(light<2)&&(g[1]<-0.6)&&( (inc>75)||(inc<100))){
             pocket=1;
             //IN POCKET
         }
-        if((prox>=1)&&(light>=2)&&(g[1]>=-0.5)){
+        if((prox>=1)&&(light>=2)&&(g[1]>=-0.7)){
             if(pocket==1){
                 playSound();
                 pocket=0;
@@ -67,7 +67,7 @@ public void detect(float prox, float light, float g[], int inc){
 ```
 
 
-In my example the border values are 1 for proximity sensor, 2 for light sensor and -0.5 for accelerometer (it also takes account of inclination).
+In my example the border values are 1 for proximity sensor, 2 for light sensor and -0.6/-0.7 for accelerometer (it also takes account of inclination).
 
 P.S: This mechanism isn't really precise.
 
